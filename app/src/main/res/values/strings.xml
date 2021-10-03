@@ -2,6 +2,6 @@
     <string name="app_name">Test1</string>
     <string name="message_text">...</string>
     <string name="button_text">Change!</string>
-    <string name="inputName">Name</string>
+    <string name="inputTalk">話す言葉を入力してください</string>
     <string name="text_view">TextView</string>
 </resources>
