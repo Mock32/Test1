@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.example.test1.databinding.ActivityMainBinding //手動で追加
 import android.speech.tts.TextToSpeech  //手動で追加
+import android.widget.Toast
 import java.util.*
 
 
@@ -65,12 +66,12 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
                     tts.language = Locale.JAPAN
                 } else {
                     // 言語の設定に失敗
+                    Toast.makeText(this@MainActivity,"言語設定に失敗",Toast.LENGTH_SHORT).show()
                 }
             }
-
-
         } else {
             // Tts init 失敗
+            Toast.makeText(this@MainActivity,"Tts init 失敗",Toast.LENGTH_SHORT).show()
         }
     }
 
