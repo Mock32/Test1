@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
         // ~省略~
 
+    var flag = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,22 +39,7 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         //TTS初期化
         textToSpeech = TextToSpeech(this, this)
 
-        var flag = false
         binding.messageTextView.text = "A button"
-
-        binding.changeButton.setOnClickListener{
-
-          if(flag){
-              binding.messageTextView.text = "Hello"
-              SpeechText("はろー")
-              flag = false
-
-          }else{
-              binding.messageTextView.text = "World"
-              SpeechText("わーるど")
-              flag = true
-          }
-        };
 
     }
 
@@ -83,6 +69,19 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     override fun onDestroy() {
         textToSpeech?.shutdown()
         super.onDestroy()
+    }
+
+    fun changeTextView(view: android.view.View) {
+        if(flag){
+            binding.messageTextView.text = "Hello"
+            SpeechText("はろー")
+            flag = false
+
+        }else{
+            binding.messageTextView.text = "World"
+            SpeechText("わーるど")
+            flag = true
+        }
     }
 
 }
