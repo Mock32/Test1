@@ -83,5 +83,4 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             flag = true
         }
     }
-
 }
