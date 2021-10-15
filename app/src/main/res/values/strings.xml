@@ -5,4 +5,5 @@
     <string name="inputTalk">話す言葉を入力してください</string>
     <string name="text_view">TextView</string>
     <string name="Permission">Permission</string>
+    <string name="Load">読み込み</string>
 </resources>
