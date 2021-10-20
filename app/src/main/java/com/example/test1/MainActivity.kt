@@ -23,17 +23,32 @@ class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // ~省略~
 
     var flag = false
-
+    /*
+    生成処理
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        /*
+        ビュー バインディングとは、ビューを操作するコードを簡単に記述できる機能
+        ビュー バインディングは findViewById の後継
+        ビュー バインディングクラスはres/layout毎に自動生成
+        クラス名称は レイアウト名が  xxx_yyy.xml の場合は XxxYyyBingingとなる
 
-        // bindingのイニシャライズ
-        // Binding Classに含まれる静的 inflate() メソッドを呼び出す
+        ビュー バインディングには、findViewById を使用するよりも大きなメリットがあります。
+            null の安全性
+            型の安全性
+
+        bindingのイニシャライズ
+        Binding Classに含まれる静的 inflate() メソッドを呼び出す
+        */
         binding = ActivityMainBinding.inflate(layoutInflater)
 
+        /*
+        バインディングを使っていない場合は
+        setContentView(R.layout.activity_main)
+         */
         // root view への参照を取得
         val view = binding.root
-
         setContentView(view)
 
         //TTS初期化
